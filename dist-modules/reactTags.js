@@ -42,7 +42,8 @@ var DefaultClassNames = {
   selected: 'ReactTags__selected',
   tag: 'ReactTags__tag',
   remove: 'ReactTags__remove',
-  suggestions: 'ReactTags__suggestions'
+  suggestions: 'ReactTags__suggestions',
+  inputContainer: 'ReactTags__input-container'
 };
 
 var ReactTags = _react2.default.createClass({
@@ -335,11 +336,14 @@ var ReactTags = _react2.default.createClass({
       { className: this.state.classNames.tags },
       _react2.default.createElement(
         'div',
-        { className: this.state.classNames.selected },
-        tagItems,
+        { className: this.state.classNames.inputContainer },
         this.props.inline && tagInput
       ),
-      !this.props.inline && tagInput
+      _react2.default.createElement(
+        'div',
+        { className: this.state.classNames.selected },
+        tagItems
+      )
     );
   }
 });
