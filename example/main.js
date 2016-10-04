@@ -32,11 +32,13 @@ var App = React.createClass({
             suggestions: Countries
         }
     },
+    
     handleDelete: function(i) {
         var tags = this.state.tags;
         tags.splice(i, 1);
         this.setState({tags: tags});
     },
+
     handleAddition: function(tag) {
         var tags = this.state.tags;
         tags.push({
@@ -55,12 +57,16 @@ var App = React.createClass({
         // re-render
         this.setState({ tags: tags });
     },
+    test: function (tag) {
+      console.log(tag);
+    },
     render: function() {
         var tags = this.state.tags;
         var suggestions = this.state.suggestions;
         return (
             <div>
-                <Tags tags={tags}
+              <Tags tags={tags}
+                    handleClick={this.test}
                     suggestions={Countries}
                     handleDelete={this.handleDelete}
                     handleAddition={this.handleAddition}

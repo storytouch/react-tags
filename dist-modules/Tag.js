@@ -100,9 +100,14 @@ var Tag = function (_Component) {
         }
       });
       var tagComponent = _react2.default.createElement(
-        'span',
-        { style: { opacity: isDragging ? 0 : 1 }, className: props.classNames.tag },
-        label,
+        'div',
+        { style: { opacity: isDragging ? 0 : 1 },
+          className: props.classNames.tag },
+        _react2.default.createElement(
+          'span',
+          { onClick: _this.props.handleClick },
+          label
+        ),
         _react2.default.createElement(RemoveComponent, { className: props.classNames.remove, onClick: props.onDelete })
       );
       return connectDragSource(connectDropTarget(tagComponent));
@@ -118,6 +123,7 @@ Tag.propTypes = {
   tag: _react2.default.PropTypes.object.isRequired,
   moveTag: _react2.default.PropTypes.func,
   removeComponent: _react2.default.PropTypes.func,
+  handleClick: _react2.default.PropTypes.func,
   classNames: _react2.default.PropTypes.object,
   readOnly: _react2.default.PropTypes.bool,
   connectDragSource: _react2.default.PropTypes.func.isRequired,

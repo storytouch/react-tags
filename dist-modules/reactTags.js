@@ -57,6 +57,7 @@ var ReactTags = _react2.default.createClass({
     delimiters: _react2.default.PropTypes.array,
     autofocus: _react2.default.PropTypes.bool,
     inline: _react2.default.PropTypes.bool,
+    handleClick: _react2.default.PropTypes.func.isRequired,
     handleDelete: _react2.default.PropTypes.func.isRequired,
     handleAddition: _react2.default.PropTypes.func.isRequired,
     handleDrag: _react2.default.PropTypes.func,
@@ -118,6 +119,13 @@ var ReactTags = _react2.default.createClass({
       suggestions: suggestions,
       classNames: _extends({}, DefaultClassNames, props.classNames)
     });
+  },
+
+
+  handleClick: function handleClick(tag) {
+    var handleClick = this.props.handleClick;
+
+    handleClick(tag);
   },
 
   handleDelete: function handleDelete(i, e) {
@@ -299,6 +307,7 @@ var ReactTags = _react2.default.createClass({
         labelField: this.props.labelField,
         onDelete: this.handleDelete.bind(this, i),
         moveTag: moveTag,
+        handleClick: this.handleClick.bind(this, tag),
         removeComponent: this.props.removeComponent,
         readOnly: this.props.readOnly,
         classNames: this.state.classNames });
