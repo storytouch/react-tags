@@ -314,22 +314,35 @@ var ReactTags = _react2.default.createClass({
     }.bind(this));
 
     // get the suggestions for the given query
-    var query = this.state.query.trim(),
-        selectedIndex = this.state.selectedIndex,
-        suggestions = this.state.suggestions,
-        placeholder = this.props.placeholder;
+    var query = this.state.query.trim();
+    var _state2 = this.state;
+    var selectedIndex = _state2.selectedIndex;
+    var suggestions = _state2.suggestions;
+    var _props = this.props;
+    var labelField = _props.labelField;
+    var id = _props.id;
+
 
     var tagInput = !this.props.readOnly ? _react2.default.createElement(
       'div',
       { className: this.state.classNames.tagInput },
       _react2.default.createElement('input', { ref: 'input',
+        id: id,
         type: 'text',
-        placeholder: placeholder,
-        'aria-label': placeholder,
         onBlur: this.handleBlur,
         onChange: this.handleChange,
         onKeyDown: this.handleKeyDown,
         onPaste: this.handlePaste }),
+      _react2.default.createElement(
+        'label',
+        { htmlFor: id },
+        labelField
+      ),
+      _react2.default.createElement(
+        'span',
+        { className: 'label-bottom' },
+        ' '
+      ),
       _react2.default.createElement(_Suggestions2.default, { query: query,
         suggestions: suggestions,
         selectedIndex: selectedIndex,

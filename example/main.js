@@ -65,13 +65,15 @@ var App = React.createClass({
         var suggestions = this.state.suggestions;
         return (
             <div>
-              <Tags tags={tags}
-                    handleClick={this.test}
-                    suggestions={Countries}
-                    handleDelete={this.handleDelete}
-                    handleAddition={this.handleAddition}
-                    handleDrag={this.handleDrag}
-                    minQueryLength={2} />
+              <Tags
+                labelField="Testando"
+                tags={tags}
+                handleClick={this.test}
+                suggestions={Countries}
+                handleDelete={this.handleDelete}
+                handleAddition={this.handleAddition}
+                handleDrag={this.handleDrag}
+                minQueryLength={2} />
                 <pre>
                     <code>{JSON.stringify(tags, null, 2)}</code>
                 </pre>
