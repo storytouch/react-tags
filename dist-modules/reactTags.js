@@ -359,12 +359,12 @@ var ReactTags = _react2.default.createClass({
       _react2.default.createElement(
         'div',
         { className: this.state.classNames.inputContainer },
-        this.props.inline && tagInput
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: this.state.classNames.selected },
-        tagItems
+        this.props.inline && tagInput,
+        _react2.default.createElement(
+          'div',
+          { className: this.state.classNames.selected },
+          tagItems
+        )
       )
     );
   }
