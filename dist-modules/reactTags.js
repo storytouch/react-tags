@@ -343,6 +343,11 @@ var ReactTags = _react2.default.createClass({
         { className: 'label-bottom' },
         ' '
       ),
+      _react2.default.createElement(
+        'div',
+        { id: 'tag-list', className: this.state.classNames.selected },
+        tagItems
+      ),
       _react2.default.createElement(_Suggestions2.default, { query: query,
         suggestions: suggestions,
         selectedIndex: selectedIndex,
@@ -359,12 +364,7 @@ var ReactTags = _react2.default.createClass({
       _react2.default.createElement(
         'div',
         { className: this.state.classNames.inputContainer },
-        this.props.inline && tagInput,
-        _react2.default.createElement(
-          'div',
-          { className: this.state.classNames.selected },
-          tagItems
-        )
+        this.props.inline && tagInput
       )
     );
   }

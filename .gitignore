@@ -5,3 +5,5 @@ npm-debug.log
 #Vim Files
 *.swp
 *.un~
+*.swo
+*~
