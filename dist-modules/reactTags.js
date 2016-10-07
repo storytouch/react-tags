@@ -345,7 +345,7 @@ var ReactTags = _react2.default.createClass({
       ),
       _react2.default.createElement(
         'div',
-        { id: 'tag-list', className: this.state.classNames.selected },
+        { id: 'tag-list1', className: this.state.classNames.selected },
         tagItems
       ),
       _react2.default.createElement(_Suggestions2.default, { query: query,
